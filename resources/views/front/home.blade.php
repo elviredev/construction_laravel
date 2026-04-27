@@ -1,7 +1,876 @@
-<a href="{{ route('home') }}">Home</a> |
-<a href="{{ route('about') }}">About</a> |
-<a href="{{ route('login') }}">Login</a> |
-<a href="{{ route('register') }}">Register</a>
+@extends('front.layouts.master')
+
+@section('content')
+  <!-- ========= Hero section start ======== -->
+  <section class="hero-slider-section">
+    <div class="hero-slider owl-carousel owl-theme">
+
+      <div class="hero-slide-item banner-five-main-wrapper bg-style"
+      style="background-image: url('{{ asset('uploads/front/slider-1.jpg') }}');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 text-white">
+              <h1 class="mb-4 hero-slider-title">Manufacturing <br> Facility Construction</h1>
+              <p class="hero-slide-paragraph">We embrace the latest construction technologies and
+                sustainable practices to deliver
+                modern and eco-friendly solutions.</p>
+              <div>
+                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                      <span class="btn-text">Get Started</span>
+                      <span class="btn-icon-hover">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide-item banner-five-main-wrapper bg-style"
+      style="background-image: url('{{ asset('uploads/front/slider-2.jpg') }}');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 text-white">
+              <h1 class="mb-4 hero-slider-title">
+                Building the Future With Confidence</h1>
+              <p class="hero-slide-paragraph">Solar panels produce clean energy that emits no
+                greenhouse gases or pollutants. This
+                means cleaner air and a healthier environment.</p>
+              <div>
+                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                      <span class="btn-text">Get Started</span>
+                      <span class="btn-icon-hover">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-slide-item banner-five-main-wrapper bg-style"
+      style="background-image: url('{{ asset('uploads/front/slider-3.jpg') }}');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 text-white">
+              <h1 class="mb-4 hero-slider-title">
+                Crafting Durable Spaces Innovation
+              </h1>
+              <p class="hero-slide-paragraph">Solar panels produce clean energy that emits no
+                greenhouse gases or pollutants. This
+                means cleaner air and a healthier environment.</p>
+              <div>
+                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                      <span class="btn-text">Get Started</span>
+                      <span class="btn-icon-hover">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ========= Hero section end ======== -->
+
+  <!-- ========= About section end ======== -->
+  <section class="px-3  overflow-hidden">
+    <div class="container py-24">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5">
+          <div class="position-relative about-img-wrapper">
+            <img loading="lazy" src="{{ asset('uploads/front/shape-01.svg') }}" alt="shape" class="position-absolute about-shape1">
+
+            <img loading="lazy" src="{{ asset('uploads/front/home-about.png') }}"
+            class="img-fluid rounded-3 position-relative z-1" alt="construction_image">
+
+            <img loading="lazy" src="{{ asset('uploads/front/shape-02.svg') }}" alt="shape"
+            class="position-absolute about-shape2">
+
+            <div
+            class="counter-badge position-absolute bg-white shadow p-4 rounded-3 d-flex align-items-center z-2">
+              <div>
+                <h3 class="h2 fw-bold mb-0 text-primary">30+</h3>
+                <p class="small text-muted mb-0">Years Of Experience</p>
+              </div>
+            </div>
+
+            <a href="https://www.youtube.com/watch?v=do7aB3efxiY"
+            class="glightbox video-play-btn about-play-btns  mb-4 me-4 z-30 text-decoration-none">
+              <span class="play-icon shadow-lg">
+                <i class="fa-solid fa-play"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="section-title">
+            <p class="text-primary fw-bold text-uppercase mb-2">About Company</p>
+            <h2 class="main-title fw-600 mb-4">Powering Your Business <br> the Smart Way</h2>
+            <p class="description">Precision begins long before the first stone is laid. Our
+              specialists conduct exhaustive site assessments and technical consultations to identify
+              the specific demands of each landscape. Through this data-driven approach, we evaluate
+              logistical constraints and structural possibilities, ensuring that every recommendation
+              we make is backed by engineering integrity and site-specific intelligence.These initial
+              insights allow us to determine the most effective construction solutions tailored
+              specifically to your goals.</p>
+            <p class="description mb-4 d-md-none d-xl-block">
+
+              Once the evaluation phase is complete, we synthesize this data to engineer the best
+              possible construction solutions. Our focus remains on integrating innovative building
+              techniques with practical site management. This comprehensive oversight ensures that our
+              projects are executed with a high degree of accuracy, minimizing delays and providing
+              our clients with a seamless transition from the drawing board to the finished
+              structure.These initial insights allow us to determine the most effective construction
+              solutions tailored specifically to your goals.</p>
+          </div>
 
 
-<h1> Home Page</h1>
+          <div class="">
+            <div class="d-flex align-items-center mb-30">
+              <div class="call-icon bg-light p-3 rounded-circle me-3 border">
+                <i class="fa-solid fa-phone-volume text-primary fs-4"></i>
+              </div>
+              <div>
+                <p class="text-muted mb-2">Have any question? Give us call</p>
+                <a href="tel:+346677889877"
+                class="h6 fw-bold text-decoration-none text-dark">+346-6778-89877</a>
+              </div>
+            </div>
+            <a href="contact.html" class="primary-btns hover-icon-reverse">
+              <span class="btn-text-content">
+                <span class="btn-icon-wrapper">
+                  <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
+                  <span class="btn-text">Contact Us</span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========= About section end ======== -->
+
+  <!-- ========= service section start ======== -->
+  <section class="services-section px-3">
+    <div class="container py-24">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 col-md-7">
+          <span class="sub-title">OUR SERVICES —</span>
+          <h2 class="main-title">Our Recently <br> Completed Services</h2>
+        </div>
+        <div class="col-lg-5 offset-lg-1 col-md-5 mt-3 mt-md-0">
+          <p class="description mb-0">
+            Safety is at the core of everything we do. We maintain strict safety protocols and
+            provide ongoing training to our team to ensure a safe working environment. Our
+            commitment to safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 h-100">
+            <div class="card-icon mb-4">
+              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
+            </div>
+            <h3 class="card-title">Modern Building Solutions</h3>
+            <p class="card-text">We deliver innovative construction services that ensure strong
+              foundations, durable structures, and efficient project execution.</p>
+
+            <a href="service-details.html" class="read-more-btn">
+              <span class="ms-3">Read More</span>
+              <div class="arrow-circle">
+                <span class="arrow-icon">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 h-100 position-relative">
+            <div class="popular-ribbon">Popular</div>
+            <div class="card-icon mb-4">
+              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
+            </div>
+            <h3 class="card-title">Residential Construction</h3>
+            <p class="card-text">We build high-quality homes with modern design, long-lasting
+              materials, and complete attention to every detail of your project.</p>
+
+            <a href="service-details.html" class="read-more-btn">
+              <span class="ms-3">Read More</span>
+              <div class="arrow-circle">
+                <span class="arrow-icon">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 h-100">
+            <div class="card-icon mb-4">
+              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
+            </div>
+            <h3 class="card-title">Commercial Project Build</h3>
+            <p class="card-text">Our team handles commercial building projects with strategic planning,
+              quality materials, and an efficient construction process.</p>
+
+            <a href="service-details.html" class="read-more-btn">
+              <span class="ms-3">Read More</span>
+              <div class="arrow-circle">
+                <span class="arrow-icon">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========= service section end ======== -->
+
+
+
+  <!-- ========= Works Process section start ======== -->
+  <section class="works-process-area px-3">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 col-md-7">
+          <span class="sub-title">OUR WORKS</span>
+          <h2 class="main-title">Building Your Future <br> with Expert Craftsmanship</h2>
+        </div>
+        <div class="col-lg-5 offset-lg-1 col-md-5 mt-3 mt-md-0">
+          <p class="description mb-0">
+            Our skilled team evaluates every site carefully and
+            provides professional construction planning tailored to your project.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- item 1 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="process-card position-relative overflow-hidden rounded-3 shadow-sm">
+            <div class="card-bg-img" style="background-image: url('{{ asset('uploads/front/worker-1.png') }}')"></div>
+            <div class="card-content-normal p-4">
+              <h6 class="text-accent-orange">Prime Construction</h6>
+              <h3 class="title works-title h5 fw-bold">A Showcase of Our Building Projects</h3>
+            </div>
+            <div class="card-content-hover p-4 d-flex flex-column justify-content-end">
+              <h6 class="text-accent-orange">Prime Construction</h6>
+              <h3 class="title works-title h4 fw-bold mb-3">A Showcase of Our Building Projects</h3>
+              <div>
+                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                        <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        <span class="btn-text">View Details</span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item 2 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="process-card position-relative overflow-hidden rounded-3 shadow-sm">
+            <div class="card-bg-img" style="background-image: url('{{ asset('uploads/front/worker-2.png') }}')"></div>
+            <div class="card-content-normal p-4">
+              <h6 class="text-accent-orange-light">Prime Construction</h6>
+              <h3 class="title works-title h5 fw-bold">A Development from Our Core Projects</h3>
+            </div>
+            <div class="card-content-hover p-4 d-flex flex-column justify-content-end">
+              <h6 class="text-accent-orange">Prime Construction</h6>
+              <h3 class="title works-title h4 fw-bold mb-3">A Development from Our Core Projects</h3>
+              <div>
+                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                      <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="btn-text">View Details</span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- item 3 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="process-card position-relative overflow-hidden rounded-3 shadow-sm">
+            <div class="card-bg-img" style="background-image: url('{{ asset('uploads/front/worker-3.png') }}')"></div>
+            <div class="card-content-normal p-4">
+              <h6 class="text-accent-orange">Prime Construction</h6>
+              <h3 class="title works-title h5 fw-bold">An Installation from Our Major Builds</h3>
+            </div>
+            <div class="card-content-hover p-4 d-flex flex-column justify-content-end">
+              <h6 class="text-accent-orange">Prime Construction</h6>
+              <h3 class="title works-title h4 fw-bold mb-3">An Installation from Our Major Builds
+              </h3>
+              <div>
+                <a href="contact.html" class="primary-btns secondary-btns hover-icon-reverse">
+                  <span class="btn-text-content">
+                    <span class="btn-icon-wrapper">
+                      <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="btn-text">View Details</span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ========= Works Process section End ======== -->
+
+  <!-- =========  Testimonials section Start ======== -->
+  <section class="testimonial-area py-5 bg-white position-relative">
+    <div class="container py-24">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <p class="sub-title">OUR TESTIMONIAL</p>
+          <h2 class="main-title">Chosen by Industry Leaders <br> Worldwide</h2>
+        </div>
+      </div>
+
+      <div class="slider-container-relative position-relative px-md-5">
+        <div class="owl-carousel owl-theme testimonial-slider-3">
+          <div class="item  border shadow-sm px-40">
+            <div class="testimonial-card py-50 m-2 bg-white h-100">
+              <div class="author-info d-flex align-items-center mb-4">
+                <img src="{{ asset('uploads/front/testimonial-1.jpg') }}"
+                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
+                alt="author">
+                <div>
+                  <h4 class="mb-0 fw-bold">Robert Wilson</h4>
+                  <p class="text-muted mb-0">Project Manager</p>
+                </div>
+              </div>
+              <p class="testimonial-text text-muted mb-3">
+                Choosing BuildPro for our renovation was one of the best decisions we made. From the
+                first site visit to the final handover.
+              </p>
+              <div class="star-rating text-warning small">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="item  border shadow-sm px-40">
+            <div class="testimonial-card py-50 m-2 bg-white h-100">
+              <div class="author-info d-flex align-items-center mb-4">
+                <img src="{{ asset('uploads/front/testimonial-2.jpg') }}"
+                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
+                alt="author">
+                <div>
+                  <h4 class="mb-0 fw-bold">Michael Thomas</h4>
+                  <p class="text-muted mb-0">Real Estate Developer</p>
+                </div>
+              </div>
+              <p class="testimonial-text text-muted mb-3">
+                Their team maintained outstanding professionalism throughout the project. Very
+                satisfied with the result.
+              </p>
+              <div class="star-rating text-warning small">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="item  border shadow-sm px-40">
+            <div class="testimonial-card py-50 m-2 bg-white h-100">
+              <div class="author-info d-flex align-items-center mb-4">
+                <img src="{{ asset('uploads/front/testimonial-3.jpg') }}"
+                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
+                alt="author">
+                <div>
+                  <h4 class="mb-0 fw-bold">Sarah Jenkins</h4>
+                  <p class="text-muted mb-0">Architect</p>
+                </div>
+              </div>
+              <p class="testimonial-text text-muted mb-3">
+                BuildPro delivers quality work on time. Their attention to detail is remarkable in
+                every phase.
+              </p>
+              <div class="star-rating text-warning small">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========  Testimonials section end ======== -->
+
+
+  <!-- =========  Teams section Start ======== -->
+  <section class="team-area px-3">
+    <div class="container py-24">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <p class="sub-title">OUR TEAM</p>
+          <h2 class="main-title">Our Expert Team</h2>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- item 1 -->
+        <div class="col-xl-3 col-md-4 ">
+          <div class="team-card-v2">
+            <div class="image-section">
+              <a href="team-details.html">
+                <img src="{{ asset('uploads/front/team_member-1.png') }}" class="img-fluid w-100"
+                alt="Michael Roberts">
+              </a>
+              <div class="social-wrapper">
+                <ul class="list-unstyled mb-0 d-flex justify-content-center gap-2">
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-area position-relative content-area-padding">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="title mb-2">
+                    <a href="team-details.html"
+                    class="title text-reset text-decoration-none fw-bold">Sarah
+                      Williams</a>
+                  </h5>
+                  <p class="designation text-muted mb-1">Civil Engineer</p>
+                </div>
+                <a href="team-details.html"
+                class="team-arrow-icon text-decoration-none text-reset">
+                  <div class="arrow-circle">
+                    <span class="arrow-icon">↗</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- item 2 -->
+        <div class="col-xl-3 col-md-4 ">
+          <div class="team-card-v2">
+            <div class="image-section">
+              <a href="team-details.html">
+                <img src="{{ asset('uploads/front/team_member-3.png') }}" class="img-fluid w-100"
+                alt="Michael Roberts">
+              </a>
+              <div class="social-wrapper">
+                <ul class="list-unstyled mb-0 d-flex justify-content-center gap-2">
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-area position-relative content-area-padding">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="title mb-2">
+                    <a href="team-details.html"
+                    class="title text-reset text-decoration-none fw-bold">Sarah
+                      Williams</a>
+                  </h5>
+                  <p class="designation text-muted mb-1">Civil Engineer</p>
+                </div>
+                <a href="team-details.html"
+                class="team-arrow-icon text-decoration-none text-reset">
+                  <div class="arrow-circle">
+                    <span class="arrow-icon">↗</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- item 3 -->
+        <div class="col-xl-3 col-md-4 ">
+          <div class="team-card-v2">
+            <div class="image-section">
+              <a href="team-details.html">
+                <img src="{{ asset('uploads/front/team_member-6.png') }}" class="img-fluid w-100"
+                alt="Michael Roberts">
+              </a>
+              <div class="social-wrapper">
+                <ul class="list-unstyled mb-0 d-flex justify-content-center gap-2">
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-area position-relative content-area-padding">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="title mb-2">
+                    <a href="team-details.html"
+                    class="title text-reset text-decoration-none fw-bold">Sarah
+                      Williams</a>
+                  </h5>
+                  <p class="designation text-muted mb-1">Civil Engineer</p>
+                </div>
+                <a href="team-details.html"
+                class="team-arrow-icon text-decoration-none text-reset">
+                  <div class="arrow-circle">
+                    <span class="arrow-icon">↗</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- item 4 -->
+        <div class="col-xl-3 col-md-4 d-none d-xl-block">
+          <div class="team-card-v2">
+            <div class="image-section">
+              <a href="team-details.html">
+                <img src="{{ asset('uploads/front/team_member-7.png') }}" class="img-fluid w-100"
+                alt="Michael Roberts">
+              </a>
+              <div class="social-wrapper">
+                <ul class="list-unstyled mb-0 d-flex justify-content-center gap-2">
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-area position-relative content-area-padding">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="title mb-2">
+                    <a href="team-details.html"
+                    class="title text-reset text-decoration-none fw-bold">Sarah
+                      Williams</a>
+                  </h5>
+                  <p class="designation text-muted mb-1">Civil Engineer</p>
+                </div>
+                <a href="team-details.html"
+                class="team-arrow-icon text-decoration-none text-reset">
+                  <div class="arrow-circle">
+                    <span class="arrow-icon">↗</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========  Teams section end ======== -->
+
+  <!-- =========  our up coming events section start ======== -->
+  <section class="up-coming-events px-3">
+    <div class="container py-24">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 col-md-7">
+          <span class="sub-title">UP COMING EVENTS</span>
+          <h2 class="main-title">Upcoming Events.</h2>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="event-details.html" class="primary-btns hover-icon-reverse">
+            <span class="btn-text-content">
+              <span class="btn-icon-wrapper">
+                  <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                  <span class="btn-text">View Details</span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12">
+          <div class="owl-carousel event-carousel owl-theme">
+            <!-- slider 1 -->
+            <div class="item">
+              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
+                <div class="thumbnail position-relative overflow-hidden">
+                  <a href="event-details.html">
+                    <img src="{{ asset('uploads/front/event-1.png') }}" class="img-fluid w-100"
+                    alt="event">
+                  </a>
+                </div>
+                <div class="content p-4">
+                  <div class="d-flex gap-3 mb-3 text-muted small">
+                    <span>
+                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
+                      Metro Convention
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+                      11 Dec, 2026
+                    </span>
+                  </div>
+                  <a href="event-details.html" class="text-decoration-none text-dark">
+                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
+                  </a>
+                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
+                    <span class="btn-text-content">
+                      <span class="btn-icon-wrapper">
+                        <span class="btn-icon"><i
+                          class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <span class="btn-text">View Details</span>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- slider 2 -->
+            <div class="item">
+              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
+                <div class="thumbnail position-relative overflow-hidden">
+                  <a href="event-details.html">
+                    <img src="{{ asset('uploads/front/event-2.png') }}" class="img-fluid w-100"
+                    alt="event">
+                  </a>
+                </div>
+                <div class="content p-4">
+                  <div class="d-flex gap-3 mb-3 text-muted small">
+                    <span>
+                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
+                      Metro Convention
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+                      11 Dec, 2026
+                    </span>
+                  </div>
+                  <a href="event-details.html" class="text-decoration-none text-dark">
+                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
+                  </a>
+                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
+                    <span class="btn-text-content">
+                      <span class="btn-icon-wrapper">
+                        <span class="btn-icon"><i
+                          class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <span class="btn-text">View Details</span>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- slider 3 -->
+            <div class="item">
+              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
+                <div class="thumbnail position-relative overflow-hidden">
+                  <a href="event-details.html">
+                    <img src="{{ asset('uploads/front/event-3.png') }}" class="img-fluid w-100"
+                    alt="event">
+                  </a>
+                </div>
+                <div class="content p-4">
+                  <div class="d-flex gap-3 mb-3 text-muted small">
+                    <span>
+                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
+                      Metro Convention
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+                      11 Dec, 2026
+                    </span>
+                  </div>
+                  <a href="event-details.html" class="text-decoration-none text-dark">
+                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
+                  </a>
+                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
+                    <span class="btn-text-content">
+                      <span class="btn-icon-wrapper">
+                        <span class="btn-icon">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <span class="btn-text">View Details</span>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========  our up coming events section end ======== -->
+
+  <!-- =========  Last news section start ======== -->
+  <section class="blogs-section px-3">
+    <div class="container py-24">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 col-md-7">
+          <span class="sub-title">OUR BLOGS</span>
+          <h2 class="main-title">Our Latest News</h2>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="blogs.html" class="primary-btns hover-icon-reverse">
+            <span class="btn-text-content">
+              <span class="btn-icon-wrapper">
+                <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="btn-text">View all Blogs</span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <!-- blogs -->
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12">
+          <section class="tmp-blog-area2 inner">
+            <div class="container">
+              <div class="row g-4">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div
+                  class="card h-100 border-0 shadow-sm blog-card-style-two rounded-3 overflow-hidden">
+                    <div class="image-section position-relative">
+                      <a href="blog-details.html">
+                        <img src="{{ asset('uploads/front/blog-1.png') }}" class="card-img-top img-fluid"
+                        alt="Safety Workshops">
+                      </a>
+                    </div>
+                    <div class="card-body p-4">
+                      <ul class="list-inline mb-3 d-flex gap-3 text-muted small">
+                        <li class="list-inline-item"><i
+                          class="fa-regular fa-user me-1 text-primary"></i> By Author
+                        </li>
+                        <li class="list-inline-item"><i
+                          class="fa-light fa-comments me-1 text-primary"></i>
+                          Comments(08)</li>
+                      </ul>
+                      <h4 class="card-title fw-bold mb-4">
+                        <a href="blog-details.html"
+                        class="text-decoration-none text-dark hover-primary">Construction
+                          Safety Workshops: Empowering Workers.</a>
+                      </h4>
+                      <div class="button-area mt-auto">
+                        <a href="blog-details.html"
+                        class="btn btn-link p-0 text-decoration-none fw-bold text-primary">
+                          READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div
+                  class="card h-100 border-0 shadow-sm blog-card-style-two rounded-3 overflow-hidden">
+                    <div class="image-section position-relative">
+                      <a href="blog-details.html">
+                        <img src="{{ asset('uploads/front/blog-2.png') }}" class="card-img-top img-fluid"
+                        alt="Safety Workshops">
+                      </a>
+                    </div>
+                    <div class="card-body p-4">
+                      <ul class="list-inline mb-3 d-flex gap-3 text-muted small">
+                        <li class="list-inline-item"><i
+                          class="fa-regular fa-user me-1 text-primary"></i> By Author
+                        </li>
+                        <li class="list-inline-item"><i
+                          class="fa-light fa-comments me-1 text-primary"></i>
+                          Comments(08)</li>
+                      </ul>
+                      <h4 class="card-title fw-bold mb-4">
+                        <a href="blog-details.html"
+                        class="text-decoration-none text-dark hover-primary">Construction
+                          Safety Workshops: Empowering Workers.</a>
+                      </h4>
+                      <div class="button-area mt-auto">
+                        <a href="blog-details.html"
+                        class="btn btn-link p-0 text-decoration-none fw-bold text-primary">
+                          READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div
+                  class="card h-100 border-0 shadow-sm blog-card-style-two rounded-3 overflow-hidden">
+                    <div class="image-section position-relative">
+                      <a href="blog-details.html">
+                        <img src="{{ asset('uploads/front/blog-3.png') }}" class="card-img-top img-fluid"
+                        alt="Safety Workshops">
+                      </a>
+                    </div>
+                    <div class="card-body p-4">
+                      <ul class="list-inline mb-3 d-flex gap-3 text-muted small">
+                        <li class="list-inline-item"><i
+                          class="fa-regular fa-user me-1 text-primary"></i> By Author
+                        </li>
+                        <li class="list-inline-item"><i
+                          class="fa-light fa-comments me-1 text-primary"></i>
+                          Comments(08)</li>
+                      </ul>
+                      <h4 class="card-title fw-bold mb-4">
+                        <a href="blog-details.html"
+                        class="text-decoration-none text-dark hover-primary">Construction
+                          Safety Workshops: Empowering Workers.</a>
+                      </h4>
+                      <div class="button-area mt-auto">
+                        <a href="blog-details.html"
+                        class="btn btn-link p-0 text-decoration-none fw-bold text-primary">
+                          READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========  Last news section end ======== -->
+@endsection
