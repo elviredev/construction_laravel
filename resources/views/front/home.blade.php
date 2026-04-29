@@ -4,21 +4,20 @@
   <!-- ========= Hero section start ======== -->
   <section class="hero-slider-section">
     <div class="hero-slider owl-carousel owl-theme">
-
-      <div class="hero-slide-item banner-five-main-wrapper bg-style"
-      style="background-image: url('{{ asset('uploads/front/slider-1.jpg') }}');">
+      @foreach($sliders as $slider)
+        <div class="hero-slide-item banner-five-main-wrapper bg-style"
+      style="background-image: url('{{ $slider->image ? asset('uploads/admin/'.$slider->image) : asset('uploads/front/slider-default.jpg') }}');">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 text-white">
-              <h1 class="mb-4 hero-slider-title">Manufacturing <br> Facility Construction</h1>
-              <p class="hero-slide-paragraph">We embrace the latest construction technologies and
-                sustainable practices to deliver
-                modern and eco-friendly solutions.</p>
+              <h1 class="mb-4 hero-slider-title">{{ $slider->title }}</h1>
+              <p class="hero-slide-paragraph">{!! nl2br($slider->text) !!}</p>
+              @if($slider->button_link && $slider->button_text)
               <div>
-                <a href="contact.html" class="primary-btns hover-icon-reverse">
+                <a href="{{ $slider->button_link }}" class="primary-btns hover-icon-reverse">
                   <span class="btn-text-content">
                     <span class="btn-icon-wrapper">
-                      <span class="btn-text">Get Started</span>
+                      <span class="btn-text">{{ $slider->button_text }}</span>
                       <span class="btn-icon-hover">
                         <i class="fa-solid fa-arrow-right"></i>
                       </span>
@@ -26,67 +25,12 @@
                   </span>
                 </a>
               </div>
+              @endif
             </div>
           </div>
         </div>
       </div>
-
-      <div class="hero-slide-item banner-five-main-wrapper bg-style"
-      style="background-image: url('{{ asset('uploads/front/slider-2.jpg') }}');">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-7 text-white">
-              <h1 class="mb-4 hero-slider-title">
-                Building the Future With Confidence</h1>
-              <p class="hero-slide-paragraph">Solar panels produce clean energy that emits no
-                greenhouse gases or pollutants. This
-                means cleaner air and a healthier environment.</p>
-              <div>
-                <a href="contact.html" class="primary-btns hover-icon-reverse">
-                  <span class="btn-text-content">
-                    <span class="btn-icon-wrapper">
-                      <span class="btn-text">Get Started</span>
-                      <span class="btn-icon-hover">
-                        <i class="fa-solid fa-arrow-right"></i>
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="hero-slide-item banner-five-main-wrapper bg-style"
-      style="background-image: url('{{ asset('uploads/front/slider-3.jpg') }}');">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-7 text-white">
-              <h1 class="mb-4 hero-slider-title">
-                Crafting Durable Spaces Innovation
-              </h1>
-              <p class="hero-slide-paragraph">Solar panels produce clean energy that emits no
-                greenhouse gases or pollutants. This
-                means cleaner air and a healthier environment.</p>
-              <div>
-                <a href="contact.html" class="primary-btns hover-icon-reverse">
-                  <span class="btn-text-content">
-                    <span class="btn-icon-wrapper">
-                      <span class="btn-text">Get Started</span>
-                      <span class="btn-icon-hover">
-                        <i class="fa-solid fa-arrow-right"></i>
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      @endforeach
     </div>
   </section>
   <!-- ========= Hero section end ======== -->

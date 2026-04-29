@@ -30,6 +30,24 @@ body {
 	overflow-x: hidden;
 }
 
+.w_80 { width: 80px; }
+.w_100 { width: 100px; }
+.w_150 { width: 150px; }
+.w_200 { width: 200px; }
+.w_250 { width: 250px; }
+.w_300 { width: 300px; }
+.w_350 { width: 350px; }
+.w_400 { width: 400px; }
+
+.h_80 { height: 80px; }
+.h_100 { height: 100px; }
+.h_150 { height: 150px; }
+.h_200 { height: 200px; }
+.h_250 { height: 250px; }
+.h_300 { height: 300px; }
+.h_350 { height: 350px; }
+.h_400 { height: 400px; }
+
 body {
 	background-color: var(--gray-50);
 	color: var(--gray-800);

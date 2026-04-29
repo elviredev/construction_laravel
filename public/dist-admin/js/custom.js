@@ -92,7 +92,7 @@ $(function () {
       columnDefs: [{ orderable: false, targets: -1 }],
       language: {
         search: '_INPUT_',
-        searchPlaceholder: 'Search employees\u2026',
+        searchPlaceholder: 'Search Here\u2026',
         lengthMenu: 'Show _MENU_ entries'
       }
     });
