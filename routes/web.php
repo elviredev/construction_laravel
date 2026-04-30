@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminSliderController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Front\FrontController;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 /* USER */
 Route::get('/', [FrontController::class, 'home'])->name('home');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
+Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 
 Route::get('/login', [FrontController::class, 'login'])->name('login');
 Route::post('/login',[FrontController::class,'login_submit'])->name('login_submit');
@@ -58,6 +60,11 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::post('/testimonial/store', [AdminTestimonialController::class, 'store'])->name('admin_testimonial_store');
   Route::put('/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('admin_testimonial_update');
   Route::delete('/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('admin_testimonial_delete');
+
+  Route::get('/photo/index', [AdminPhotoController::class, 'index'])->name('admin_photo_index');
+  Route::post('/photo/store', [AdminPhotoController::class, 'store'])->name('admin_photo_store');
+  Route::put('/photo/update/{id}', [AdminPhotoController::class, 'update'])->name('admin_photo_update');
+  Route::delete('/photo/delete/{id}', [AdminPhotoController::class, 'destroy'])->name('admin_photo_delete');
 });
 
 

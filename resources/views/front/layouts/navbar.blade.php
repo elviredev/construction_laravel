@@ -29,7 +29,7 @@
             <li><a class="dropdown-item" href="team-member.html">Team Member</a></li>
             <li><a class="dropdown-item" href="projects.html">Projects</a></li>
             <li><a class="dropdown-item" href="shop.html">Shop</a></li>
-            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a></li>
             <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
           </ul>
         </li>

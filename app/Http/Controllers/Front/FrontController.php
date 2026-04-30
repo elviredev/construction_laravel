@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
+use App\Models\Photo;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -179,6 +180,12 @@ class FrontController extends Controller
     $user->save();
 
     return redirect()->route('login')->with('success','Password reset is successful. You can login now.');
+  }
+
+  public function gallery(): View
+  {
+    $photos = Photo::latest()->take(8)->get();
+    return view('front.gallery', compact('photos'));
   }
 
 }
