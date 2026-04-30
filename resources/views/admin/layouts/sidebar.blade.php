@@ -9,8 +9,12 @@
       <span class="sidebar-label">Dashboard</span>
     </a>
     <a href="{{ route('admin_slider_index') }}" class="nav-link {{ request()->routeIs('admin_slider_index') ? 'active' : '' }}">
-      <i class="fa-solid fa-sliders"></i>
-      <span class="sidebar-label">Slider</span>
+      <i class="fa-solid fa-images"></i>
+      <span class="sidebar-label">Sliders</span>
+    </a>
+    <a href="{{ route('admin_testimonial_index') }}" class="nav-link {{ request()->routeIs('admin_testimonial_index') ? 'active' : '' }}">
+      <i class="fa-solid fa-comments"></i>
+      <span class="sidebar-label">Testimonials</span>
     </a>
 {{--    <div class="nav-dropdown">--}}
 {{--      <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle">--}}

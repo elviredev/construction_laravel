@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
 use App\Models\Slider;
+use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -18,12 +19,14 @@ class FrontController extends Controller
   public function home(): View
   {
     $sliders = Slider::latest()->take(3)->get();
-    return view('front.home', compact('sliders'));
+    $testimonials = Testimonial::latest()->take(3)->get();
+    return view('front.home', compact('sliders', 'testimonials'));
   }
 
   public function about(): View
   {
-    return view('front.about');
+    $testimonials = Testimonial::latest()->take(3)->get();
+    return view('front.about', compact('testimonials'));
   }
 
   public function login()

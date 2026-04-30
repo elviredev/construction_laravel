@@ -45,12 +45,13 @@ $(document).ready(function(){
         nav: true,
         dots: false,
         autoplay: true,
+        autoHeight: false,
         navText: ["<i class='fa-solid fa-arrow-left'></i>", "<i class='fa-solid fa-arrow-right'></i>"],
         responsive: {
             0: { items: 1 },
             1024: { items: 2 } 
         },
-        
+
         onInitialized: highlightSecond,
         onTranslated: highlightSecond
     });

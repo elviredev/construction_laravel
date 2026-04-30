@@ -305,75 +305,29 @@
 
       <div class="slider-container-relative position-relative px-md-5">
         <div class="owl-carousel owl-theme testimonial-slider-3">
-          <div class="item  border shadow-sm px-40">
-            <div class="testimonial-card py-50 m-2 bg-white h-100">
-              <div class="author-info d-flex align-items-center mb-4">
-                <img src="{{ asset('uploads/front/testimonial-1.jpg') }}"
-                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
-                alt="author">
-                <div>
-                  <h4 class="mb-0 fw-bold">Robert Wilson</h4>
-                  <p class="text-muted mb-0">Project Manager</p>
+          @foreach($testimonials as $testimonial)
+            <div class="item  border shadow-sm px-40">
+              <div class="testimonial-card py-50 m-2 bg-white h-100">
+                <div class="author-info d-flex align-items-center mb-4">
+                  <img src="{{ $testimonial->image ? asset('uploads/admin/'.$testimonial->image) : asset('uploads/front/user-1.jpg') }}"
+                  class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
+                  alt="author">
+                  <div>
+                    <h4 class="mb-0 fw-bold">{{ $testimonial->name }}</h4>
+                    <p class="text-muted mb-0">{{ $testimonial->designation }}</p>
+                  </div>
+                </div>
+                <p class="testimonial-text text-muted mb-3 flex-grow-1">
+                  {{ \Illuminate\Support\Str::words($testimonial->comment, 40, '...') }}
+                </p>
+                <div class="star-rating text-warning small mt-auto">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i>
                 </div>
               </div>
-              <p class="testimonial-text text-muted mb-3">
-                Choosing BuildPro for our renovation was one of the best decisions we made. From the
-                first site visit to the final handover.
-              </p>
-              <div class="star-rating text-warning small">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i>
-              </div>
             </div>
-          </div>
-
-          <div class="item  border shadow-sm px-40">
-            <div class="testimonial-card py-50 m-2 bg-white h-100">
-              <div class="author-info d-flex align-items-center mb-4">
-                <img src="{{ asset('uploads/front/testimonial-2.jpg') }}"
-                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
-                alt="author">
-                <div>
-                  <h4 class="mb-0 fw-bold">Michael Thomas</h4>
-                  <p class="text-muted mb-0">Real Estate Developer</p>
-                </div>
-              </div>
-              <p class="testimonial-text text-muted mb-3">
-                Their team maintained outstanding professionalism throughout the project. Very
-                satisfied with the result.
-              </p>
-              <div class="star-rating text-warning small">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="item  border shadow-sm px-40">
-            <div class="testimonial-card py-50 m-2 bg-white h-100">
-              <div class="author-info d-flex align-items-center mb-4">
-                <img src="{{ asset('uploads/front/testimonial-3.jpg') }}"
-                class="rounded-circle me-3 border-2 border-white shadow-sm size-60"
-                alt="author">
-                <div>
-                  <h4 class="mb-0 fw-bold">Sarah Jenkins</h4>
-                  <p class="text-muted mb-0">Architect</p>
-                </div>
-              </div>
-              <p class="testimonial-text text-muted mb-3">
-                BuildPro delivers quality work on time. Their attention to detail is remarkable in
-                every phase.
-              </p>
-              <div class="star-rating text-warning small">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i><i class="fas fa-star"></i><i
-                class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminSliderController;
+use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,10 +48,16 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin_dashboard');
   Route::get('/profile',[AdminController::class,'profile'])->name('admin_profile');
   Route::post('/profile',[AdminController::class,'profile_update'])->name('admin_profile_update');
+
   Route::get('/slider/index', [AdminSliderController::class, 'index'])->name('admin_slider_index');
   Route::post('/slider/store', [AdminSliderController::class, 'store'])->name('admin_slider_store');
   Route::put('/slider/update/{id}', [AdminSliderController::class, 'update'])->name('admin_slider_update');
   Route::delete('/slider/delete/{id}', [AdminSliderController::class, 'destroy'])->name('admin_slider_delete');
+
+  Route::get('/testimonial/index', [AdminTestimonialController::class, 'index'])->name('admin_testimonial_index');
+  Route::post('/testimonial/store', [AdminTestimonialController::class, 'store'])->name('admin_testimonial_store');
+  Route::put('/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('admin_testimonial_update');
+  Route::delete('/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('admin_testimonial_delete');
 });
 
 

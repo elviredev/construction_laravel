@@ -1024,6 +1024,50 @@ COMPONENTS / UI ELEMENTS
 	position: relative;
 }
 
+.owl-stage-outer {
+  overflow: visible;
+}
+
+.testimonial-slider-3 .owl-stage {
+  display: flex;
+}
+
+.testimonial-slider-3 .owl-item {
+  display: flex;
+  height: auto;
+}
+
+.testimonial-slider-3 .item {
+  display: flex;
+  flex: 1;
+}
+
+.testimonial-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.testimonial-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .testimonial-text {
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* 💻 Desktop */
+@media (min-width: 769px) {
+  .testimonial-text {
+    -webkit-line-clamp: 5;
+  }
+}
 
 .testimonial-slider-3.owl-carousel .owl-nav {
 	position: absolute;
@@ -1032,7 +1076,6 @@ COMPONENTS / UI ELEMENTS
 	left: 0;
 	margin: 0;
 	transform: translateY(-50%);
-	display: block;
 	pointer-events: none;
 	display: flex;
 	flex-direction: column;
