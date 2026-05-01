@@ -30,7 +30,7 @@
             <li><a class="dropdown-item" href="projects.html">Projects</a></li>
             <li><a class="dropdown-item" href="shop.html">Shop</a></li>
             <li><a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a></li>
-            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>

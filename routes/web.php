@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminSliderController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, 'home'])->name('home');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
+Route::get('/faq', [FrontController::class, 'faq'])->name('faq');
 
 Route::get('/login', [FrontController::class, 'login'])->name('login');
 Route::post('/login',[FrontController::class,'login_submit'])->name('login_submit');
@@ -65,6 +67,11 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::post('/photo/store', [AdminPhotoController::class, 'store'])->name('admin_photo_store');
   Route::put('/photo/update/{id}', [AdminPhotoController::class, 'update'])->name('admin_photo_update');
   Route::delete('/photo/delete/{id}', [AdminPhotoController::class, 'destroy'])->name('admin_photo_delete');
+
+  Route::get('/faq/index', [AdminFaqController::class, 'index'])->name('admin_faq_index');
+  Route::post('/faq/store', [AdminFaqController::class, 'store'])->name('admin_faq_store');
+  Route::put('/faq/update/{id}', [AdminFaqController::class, 'update'])->name('admin_faq_update');
+  Route::delete('/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('admin_faq_delete');
 });
 
 

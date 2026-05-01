@@ -20,6 +20,10 @@
       <i class="fa-solid fa-images"></i>
       <span class="sidebar-label">Photos Gallery</span>
     </a>
+    <a href="{{ route('admin_faq_index') }}" class="nav-link {{ request()->routeIs('admin_faq_index') ? 'active' : '' }}">
+      <i class="fa-solid fa-question-circle"></i>
+      <span class="sidebar-label">FAQ</span>
+    </a>
 {{--    <div class="nav-dropdown">--}}
 {{--      <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle">--}}
 {{--        <i class="fa-solid fa-table"></i>--}}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
+use App\Models\Faq;
 use App\Models\Photo;
 use App\Models\Slider;
 use App\Models\Testimonial;
@@ -186,6 +187,12 @@ class FrontController extends Controller
   {
     $photos = Photo::latest()->take(8)->get();
     return view('front.gallery', compact('photos'));
+  }
+
+  public function faq(): View
+  {
+    $faqs = Faq::latest()->take(4)->get();
+    return view('front.faq', compact('faqs'));
   }
 
 }
