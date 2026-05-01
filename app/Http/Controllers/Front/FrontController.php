@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
+use App\Models\AboutItem;
 use App\Models\Faq;
 use App\Models\Photo;
 use App\Models\Slider;
@@ -22,13 +23,19 @@ class FrontController extends Controller
   {
     $sliders = Slider::latest()->take(3)->get();
     $testimonials = Testimonial::latest()->take(3)->get();
-    return view('front.home', compact('sliders', 'testimonials'));
+    $aboutItem = AboutItem::first();
+    return view('front.home', compact(
+      'sliders',
+      'testimonials',
+      'aboutItem'
+    ));
   }
 
   public function about(): View
   {
     $testimonials = Testimonial::latest()->take(3)->get();
-    return view('front.about', compact('testimonials'));
+    $aboutItem = AboutItem::first();
+    return view('front.about', compact('testimonials', 'aboutItem'));
   }
 
   public function login()

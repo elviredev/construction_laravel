@@ -19,8 +19,8 @@
 
     <div class="collapse navbar-collapse gap-3" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
-        <li class="nav-item"><a class="nav-link active" href="{{ route('home') }}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About Us</a></li>
+        <li class="nav-item"><a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">Pages</a>

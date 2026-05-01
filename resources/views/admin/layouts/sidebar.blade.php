@@ -24,6 +24,10 @@
       <i class="fa-solid fa-question-circle"></i>
       <span class="sidebar-label">FAQ</span>
     </a>
+    <a href="{{ route('admin_about_item_index') }}" class="nav-link {{ request()->routeIs('admin_about_item_index') ? 'active' : '' }}">
+      <i class="fa-solid fa-circle-info"></i>
+      <span class="sidebar-label">About Items</span>
+    </a>
 {{--    <div class="nav-dropdown">--}}
 {{--      <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle">--}}
 {{--        <i class="fa-solid fa-table"></i>--}}

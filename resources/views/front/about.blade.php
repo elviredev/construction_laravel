@@ -28,58 +28,50 @@
 
 @section('content')
 <!-- ========= About section start ======== -->
-<section class="px-3  overflow-hidden">
+<section class="px-3 overflow-hidden">
   <div class="container py-24">
     <div class="row align-items-center g-5">
       <div class="col-md-5">
-        <div class="position-relative about-img-wrapper"> <img loading="lazy"
-          src="{{ asset('uploads/front/shape-01.svg') }}" alt="shape" class="position-absolute about-shape1">
+        <div class="position-relative about-img-wrapper">
+          <img
+          loading="lazy"
+          src="{{ asset('uploads/front/shape-01.svg') }}" alt="shape"
+          class="position-absolute about-shape1">
 
-          <img loading="lazy" src="{{ asset('uploads/front/home-about.png') }}"
-          class="img-fluid rounded-3 position-relative z-1" alt="construction_image">
+          <img
+          loading="lazy"
+          src="{{ asset('uploads/admin/'.$aboutItem?->image) }}"
+          class="img-fluid rounded-3 position-relative z-1"
+          alt="construction_image">
 
-          <img loading="lazy" src="{{ asset('uploads/front/shape-02.svg') }}" alt="shape"
+          <img
+          loading="lazy"
+          src="{{ asset('uploads/front/shape-02.svg') }}" alt="shape"
           class="position-absolute about-shape2">
 
           <div
           class="counter-badge position-absolute bg-white shadow p-4 rounded-3 d-flex align-items-center z-2">
             <div>
-              <h3 class="h2 fw-bold mb-0 text-primary">30+</h3>
-              <p class="small text-muted mb-0">Years Of Experience</p>
+              <h3 class="h2 fw-bold mb-0 text-primary">{{ $aboutItem?->experience_year }}</h3>
+              <p class="small text-muted mb-0">{{ $aboutItem?->experience_text }}</p>
             </div>
           </div>
 
-          <a href="https://www.youtube.com/watch?v=do7aB3efxiY"
+          <a href="https://www.youtube.com/watch?v={{ $aboutItem?->youtube_id }}"
           class="glightbox video-play-btn about-play-btns  mb-4 me-4 z-30 text-decoration-none">
-            <span class="play-icon shadow-lg">
+              <span class="play-icon shadow-lg">
                 <i class="fa-solid fa-play"></i>
-            </span>
+              </span>
           </a>
         </div>
       </div>
 
       <div class="col-md-7">
         <div class="section-title">
-          <p class="text-primary fw-bold text-uppercase mb-2">About Company</p>
-          <h2 class="main-title fw-600 mb-4">Powering Your Business <br> the Smart Way</h2>
-          <p class="description">Precision begins long before the first stone is laid. Our
-            specialists conduct exhaustive site assessments and technical consultations to identify
-            the specific demands of each landscape. Through this data-driven approach, we evaluate
-            logistical constraints and structural possibilities, ensuring that every recommendation
-            we make is backed by engineering integrity and site-specific intelligence.These initial
-            insights allow us to determine the most effective construction solutions tailored
-            specifically to your goals.</p>
-          <p class="description mb-4 d-lg-none d-xl-block">
-
-            Once the evaluation phase is complete, we synthesize this data to engineer the best
-            possible construction solutions. Our focus remains on integrating innovative building
-            techniques with practical site management. This comprehensive oversight ensures that our
-            projects are executed with a high degree of accuracy, minimizing delays and providing
-            our clients with a seamless transition from the drawing board to the finished
-            structure.These initial insights allow us to determine the most effective construction
-            solutions tailored specifically to your goals.</p>
+          <p class="text-primary fw-bold text-uppercase mb-2">{{ $aboutItem?->subtitle }}</p>
+          <h2 class="main-title fw-600 mb-4">{!! nl2br(e($aboutItem?->title)) !!}</h2>
+          <p class="description">{!! nl2br(e($aboutItem?->text)) !!}</p>
         </div>
-
 
         <div class="">
           <div class="d-flex align-items-center mb-30">
@@ -87,18 +79,20 @@
               <i class="fa-solid fa-phone-volume text-primary fs-4"></i>
             </div>
             <div>
-              <p class="text-muted mb-2">Have any question? Give us call</p>
-              <a href="tel:+346677889877"
-              class="h6 fw-bold text-decoration-none text-dark">+346-6778-89877</a>
+              <p class="text-muted mb-2">{{ $aboutItem?->phone_text }}</p>
+              <a href="tel:{{ $aboutItem?->phone_number }}"
+              class="h6 fw-bold text-decoration-none text-dark">{{ $aboutItem?->phone_number }}</a>
             </div>
           </div>
-          <a href="contact.html" class="primary-btns hover-icon-reverse">
-            <span class="btn-text-content">
+          <a href="{{ $aboutItem?->button_link }}" class="primary-btns hover-icon-reverse">
+              <span class="btn-text-content">
                 <span class="btn-icon-wrapper">
-                    <span class="btn-icon"><i class="fa-solid fa-phone"></i></span>
-                    <span class="btn-text">Contact Us</span>
+                  <span class="btn-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span class="btn-text">{{ $aboutItem?->button_text }}</span>
                 </span>
-            </span>
+              </span>
           </a>
         </div>
       </div>

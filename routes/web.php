@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAboutItemController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPhotoController;
@@ -72,6 +73,9 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::post('/faq/store', [AdminFaqController::class, 'store'])->name('admin_faq_store');
   Route::put('/faq/update/{id}', [AdminFaqController::class, 'update'])->name('admin_faq_update');
   Route::delete('/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('admin_faq_delete');
+
+  Route::get('/about-item/index', [AdminAboutItemController::class, 'index'])->name('admin_about_item_index');
+  Route::put('/about-item/update', [AdminAboutItemController::class, 'update'])->name('admin_about_item_update');
 });
 
 
