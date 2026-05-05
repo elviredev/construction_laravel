@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAboutItemController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPhotoController;
+use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminSliderController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Front\FrontController;
@@ -15,6 +16,10 @@ Route::get('/', [FrontController::class, 'home'])->name('home');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/faq', [FrontController::class, 'faq'])->name('faq');
+Route::get('/services', [FrontController::class, 'services'])->name('services');
+Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
+Route::post('/service-contact',[FrontController::class,'service_contact'])->name('service_contact');
+
 
 Route::get('/login', [FrontController::class, 'login'])->name('login');
 Route::post('/login',[FrontController::class,'login_submit'])->name('login_submit');
@@ -76,6 +81,11 @@ Route::middleware('admin')->prefix('admin')->group(function () {
 
   Route::get('/about-item/index', [AdminAboutItemController::class, 'index'])->name('admin_about_item_index');
   Route::put('/about-item/update', [AdminAboutItemController::class, 'update'])->name('admin_about_item_update');
+
+  Route::get('/service/index', [AdminServiceController::class, 'index'])->name('admin_service_index');
+  Route::post('/service/store', [AdminServiceController::class, 'store'])->name('admin_service_store');
+  Route::put('/service/update/{service}', [AdminServiceController::class, 'update'])->name('admin_service_update');
+  Route::delete('/service/delete/{id}', [AdminServiceController::class, 'destroy'])->name('admin_service_delete');
 });
 
 

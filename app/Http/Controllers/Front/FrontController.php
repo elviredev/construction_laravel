@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
 use App\Models\AboutItem;
+use App\Models\Admin;
 use App\Models\Faq;
 use App\Models\Photo;
+use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -24,10 +27,13 @@ class FrontController extends Controller
     $sliders = Slider::latest()->take(3)->get();
     $testimonials = Testimonial::latest()->take(3)->get();
     $aboutItem = AboutItem::first();
+    $services = Service::where('show_on_home', 1)->get();
+
     return view('front.home', compact(
       'sliders',
       'testimonials',
-      'aboutItem'
+      'aboutItem',
+      'services'
     ));
   }
 
@@ -200,6 +206,41 @@ class FrontController extends Controller
   {
     $faqs = Faq::latest()->take(4)->get();
     return view('front.faq', compact('faqs'));
+  }
+
+  public function services(): View
+  {
+    $services = Service::latest()->get();
+    return view('front.services', compact('services'));
+  }
+
+  public function service($slug): View
+  {
+    $service = Service::where('slug', $slug)->firstOrFail();
+    $allServices = Service::orderBy('title', 'asc')->get();
+    return view('front.service', compact('service', 'allServices'));
+  }
+
+  public function service_contact(Request $request): RedirectResponse
+  {
+    $request->validate([
+      'name' => 'required',
+      'email' => 'required|email',
+      'message' => 'required'
+    ]);
+
+    $subject = "New Service Contact Message";
+    $message = "<b>Service Title:</b> ".$request->service_title."<br>";
+    $message .= "<b>Name:</b> ".$request->name."<br>";
+    $message .= "<b>Email:</b> ".$request->email."<br>";
+    $message .= "<b>Message:</b> ".$request->message;
+
+    $admin_data = Admin::first();
+    $admin_email = $admin_data->email;
+
+    Mail::to($admin_email)->send(new Websitemail($subject,$message));
+
+    return redirect()->back()->with('success', 'Your message has been sent successfully. We will get back to you soon.');
   }
 
 }

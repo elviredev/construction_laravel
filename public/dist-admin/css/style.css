@@ -30,6 +30,7 @@ body {
 	overflow-x: hidden;
 }
 
+.w_50 { width: 50px; }
 .w_80 { width: 80px; }
 .w_100 { width: 100px; }
 .w_150 { width: 150px; }

@@ -127,60 +127,24 @@
       </div>
 
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card p-4 h-100">
-            <div class="card-icon mb-4">
-              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
-            </div>
-            <h3 class="card-title">Modern Building Solutions</h3>
-            <p class="card-text">We deliver innovative construction services that ensure strong
-              foundations, durable structures, and efficient project execution.</p>
-
-            <a href="service-details.html" class="read-more-btn">
-              <span class="ms-3">Read More</span>
-              <div class="arrow-circle">
-                <span class="arrow-icon">↗</span>
+        @foreach($services as $service)
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card p-4 h-100">
+              <div class="card-icon mb-4">
+                <img src="{{ asset('uploads/admin/' .$service->icon) }}" alt="Icon" width="55">
               </div>
-            </a>
-          </div>
-        </div>
+              <h3 class="card-title">{{ $service->title }}</h3>
+              <p class="card-text">{{ $service->short_description }}</p>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card p-4 h-100 position-relative">
-            <div class="popular-ribbon">Popular</div>
-            <div class="card-icon mb-4">
-              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
+              <a href="{{ route('service', $service->slug) }}" class="read-more-btn">
+                <span class="ms-3">Read More</span>
+                <div class="arrow-circle">
+                  <span class="arrow-icon">↗</span>
+                </div>
+              </a>
             </div>
-            <h3 class="card-title">Residential Construction</h3>
-            <p class="card-text">We build high-quality homes with modern design, long-lasting
-              materials, and complete attention to every detail of your project.</p>
-
-            <a href="service-details.html" class="read-more-btn">
-              <span class="ms-3">Read More</span>
-              <div class="arrow-circle">
-                <span class="arrow-icon">↗</span>
-              </div>
-            </a>
           </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card p-4 h-100">
-            <div class="card-icon mb-4">
-              <img src="{{ asset('uploads/front/30.svg') }}" alt="Icon" width="55">
-            </div>
-            <h3 class="card-title">Commercial Project Build</h3>
-            <p class="card-text">Our team handles commercial building projects with strategic planning,
-              quality materials, and an efficient construction process.</p>
-
-            <a href="service-details.html" class="read-more-btn">
-              <span class="ms-3">Read More</span>
-              <div class="arrow-circle">
-                <span class="arrow-icon">↗</span>
-              </div>
-            </a>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
