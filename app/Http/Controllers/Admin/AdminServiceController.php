@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreServiceRequest;
 use App\Http\Requests\Admin\UpdateServiceRequest;
 use App\Models\Service;
+use App\Models\ServiceFaq;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class AdminServiceController extends Controller
@@ -89,6 +91,73 @@ class AdminServiceController extends Controller
     }
 
     $service->delete();
+    return redirect()->back()->with('success', 'Item deleted successfully');
+  }
+  
+  
+  /************* Service FAQS *************/
+
+  /**
+   * Retrieves frequently asked questions (FAQs) for a specific service by its ID.
+   * Fetches the service instance and its associated FAQs, ordered by ID in ascending order.
+   * Returns a view displaying the FAQs for the service.
+   *
+   * @param Service $service
+   * @return \Illuminate\View\View The view displaying the service FAQs.
+   */
+  public function faqs(Service $service): View
+  {
+    $faqs = $service->faqs()->orderBy('id', 'asc')->get();
+
+    return view('admin.service.faq', compact('service', 'faqs'));
+  }
+
+  /**
+   * Store a new FAQ for a specific service.
+   *
+   * @param Request $request
+   * @param Service $service
+   * @return RedirectResponse
+   */
+  public function faq_store(Request $request, Service $service): RedirectResponse
+  {
+    $validated = $request->validate([
+      'question' => 'required|string|max:255',
+      'answer' => 'required|string'
+    ]);
+
+    $service->faqs()->create($validated);
+
+    return redirect()->back()->with('success', 'Item added successfully');
+  }
+
+  /**
+   * Update an existing FAQ for a specific service.
+   *
+   * @param Request $request
+   * @param ServiceFaq $faq
+   * @return RedirectResponse
+   */
+  public function faq_update(Request $request, ServiceFaq $faq): RedirectResponse
+  {
+    $validated = $request->validate([
+      'question' => 'required|string|max:255',
+      'answer' => 'required|string'
+    ]);
+
+    $faq->update($validated);
+
+    return redirect()->back()->with('success', 'Item updated successfully');
+  }
+
+  /**
+   * Delete an existing FAQ for a specific service.
+   * @param ServiceFaq $faq
+   * @return RedirectResponse
+   */
+  public function faq_destroy(ServiceFaq $faq): RedirectResponse
+  {
+    $faq->delete();
     return redirect()->back()->with('success', 'Item deleted successfully');
   }
 }

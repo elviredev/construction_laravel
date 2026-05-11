@@ -77,6 +77,7 @@
         <th>Image</th>
         <th>Title</th>
         <th>Show on Home</th>
+        <th>FAQs</th>
         <th>Action</th>
       </tr>
       </thead>
@@ -93,6 +94,11 @@
           <td>{{ $service->title }}</td>
           <td >
             <span class="{{ $service->show_on_home ? 'text-success' : 'text-danger' }} fw-semibold">{{ $service->show_on_home == 1 ? "Yes" : "No" }}</span>
+          </td>
+          <td>
+            <a href="{{ route('admin_service_faqs', $service->id) }}" class="btn btn-sm btn-warning">
+              <i class="fa-solid fa-gear text-xs"></i> Manage FAQs
+            </a>
           </td>
           <td>
             <div class="d-flex align-items-center gap-1">

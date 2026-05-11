@@ -216,8 +216,12 @@ class FrontController extends Controller
 
   public function service($slug): View
   {
-    $service = Service::where('slug', $slug)->firstOrFail();
+    $service = Service::with('faqs')
+      ->where('slug', $slug)
+      ->firstOrFail();
+
     $allServices = Service::orderBy('title', 'asc')->get();
+
     return view('front.service', compact('service', 'allServices'));
   }
 

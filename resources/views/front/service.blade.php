@@ -124,52 +124,32 @@
               </div>
 
               <!-- Accordion Area -->
-              <div class="faq-content-area">
-                <div class="accordion" id="accordionExample">
+              @if($service->faqs->isNotEmpty())
+                <div class="faq-content-area">
+                  <div class="accordion" id="accordionExample">
 
-                  <h3 class="fw-bold mb-3">Service FAQs</h3>
+                    <h3 class="fw-bold mb-3">Service FAQs</h3>
 
-                  <!-- Accordion Item 1 -->
-                  <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button fw-bold py-3" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        <i class="fa-solid fa-hard-hat me-3 text-primary"></i> What is
-                        included in project site preparation?
-                      </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show"
-                    data-bs-parent="#accordionExample">
-                      <div class="accordion-body bg-light">
-                        <p class="desc mb-4">Construction services typically begin with a
-                          consultation phase, where experts assess the client's site
-                          needs. This includes evaluating factors such as land structure
-                          and project feasibility.</p>
+                    @foreach($service->faqs as $faq)
+                    <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold py-3 {{ $loop->first ? '' : 'collapsed' }}" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}">
+                          <i class="fa-solid fa-hard-hat me-3 text-primary"></i> {{ $faq->question }}
+                        </button>
+                      </h2>
+                      <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                      data-bs-parent="#accordionExample">
+                        <div class="accordion-body bg-light">
+                          <p class="desc mb-4">{{ $faq->answer }}</p>
+                        </div>
                       </div>
                     </div>
+                    @endforeach
                   </div>
-
-                  <!-- Accordion Item 2 -->
-                  <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed fw-bold py-3" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                        <i class="fa-solid fa-clock me-3 text-primary"></i> How long does
-                        it take to complete?
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample">
-                      <div class="accordion-body bg-light">
-                        <p class="desc mb-4">Timelines vary based on size and complexity.
-                          We provide detailed schedules during the planning phase.</p>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
+              @endif
               </div>
-            </div>
           </div>
         </div>
       </div>

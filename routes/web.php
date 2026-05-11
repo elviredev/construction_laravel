@@ -86,6 +86,11 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::post('/service/store', [AdminServiceController::class, 'store'])->name('admin_service_store');
   Route::put('/service/update/{service}', [AdminServiceController::class, 'update'])->name('admin_service_update');
   Route::delete('/service/delete/{id}', [AdminServiceController::class, 'destroy'])->name('admin_service_delete');
+
+  Route::get('service/{service}/faqs', [AdminServiceController::class, 'faqs'])->name('admin_service_faqs');
+  Route::post('/service/{service}/faq/store', [AdminServiceController::class, 'faq_store'])->name('admin_service_faq_store');
+  Route::put('/service/faq/update/{faq}', [AdminServiceController::class, 'faq_update'])->name('admin_service_faq_update');
+  Route::delete('/service/faq/delete/{faq}', [AdminServiceController::class, 'faq_destroy'])->name('admin_service_faq_delete');
 });
 
 
