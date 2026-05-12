@@ -105,79 +105,34 @@
         </div>
       </div>
 
-      <div class="row mt-5 justify-content-center">
-        <div class="col-lg-11">
-          <div class="events-faqs-area bg-box-shadow">
-            <h3 class="main-title">Event FAQ'S</h3>
-            <div class="accordion custom-accordion" id="accordionExample">
-              <div class="accordion-item mb-3 border-0 bg-light rounded-3">
-                <h2 class="accordion-header">
-                  <button class="accordion-button fw-bold bg-transparent shadow-none"
-                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    What are the benefits to Join Here?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show"
-                data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-muted pt-0">
-                    Solar energy is clean and renewable, reducing reliance on fossil fuels and
-                    decreasing greenhouse gas emissions. This helps combat climate change.
-                  </div>
-                </div>
-              </div>
+      @if($event->eventFaqs->isNotEmpty())
+        <div class="row justify-content-center">
+          <div class="col-lg-11">
+            <div class="events-faqs-area bg-box-shadow">
+              <div class="accordion custom-accordion" id="accordionExample">
+                <h3 class="main-title">Event FAQ'S</h3>
 
-              <div class="accordion-item mb-3 border-0 bg-light rounded-3">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-bold bg-transparent shadow-none"
-                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                    How Can I Purchase Ticket?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-muted pt-0">
-                    You can purchase tickets directly through our website using any credit card
-                    or online payment method. Confirmation will be sent via email.
+                @foreach($event->eventFaqs as $faq)
+                  <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button fw-bold py-3 {{ $loop->first ? '' : 'collapsed' }}" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}">
+                        <i class="fa-solid fa-question-circle me-3 text-primary"></i> {{ $faq->question }}
+                      </button>
+                    </h2>
+                    <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                    data-bs-parent="#accordionExample">
+                      <div class="accordion-body bg-light">
+                        <p class="desc mb-4">{{ $faq->answer }}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                @endforeach
               </div>
-
-              <div class="accordion-item mb-3 border-0 bg-light rounded-3">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-bold bg-transparent shadow-none"
-                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                    Is there any refund policy available?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-muted pt-0">
-                    Yes, we offer a full refund if you cancel at least 48 hours before the event
-                    starts. Please check our terms and conditions for more details.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item mb-3 border-0 bg-light rounded-3">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed fw-bold bg-transparent shadow-none"
-                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                    Can I bring a guest with my ticket?
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-muted pt-0">
-                    Standard tickets are valid for one person only. However, we have group
-                    packages available that allow multiple entries at a discounted rate.
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
-      </div>
+      @endif
     </div>
   </section>
 @endsection

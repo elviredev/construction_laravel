@@ -123,7 +123,7 @@
           <td>{{ $event->event_location }}</td>
           <td>{{ $event->event_date }}</td>
           <td>
-            <a href="" class="btn btn-sm btn-warning">
+            <a href="{{ route('admin_event_faqs', $event->id) }}" class="btn btn-sm btn-warning">
               <i class="fa-solid fa-gear text-xs"></i> Manage FAQs
             </a>
           </td>

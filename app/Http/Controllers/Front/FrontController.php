@@ -258,7 +258,9 @@ class FrontController extends Controller
 
   public function event($slug): View
   {
-     $event = Event::where('slug', $slug)->firstOrFail();
+     $event = Event::with('eventFaqs')
+       ->where('slug', $slug)
+       ->firstOrFail();
 
      return view('front.event', compact('event'));
   }

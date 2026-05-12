@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Sluggable\Attributes\Sluggable;
 
 #[Sluggable(
@@ -23,6 +24,11 @@ class Event extends Model
     'ticket_price',
     'youtube_id',
     'button_text',
-    'button_link'
+    'button_link',
   ];
+
+  public function eventFaqs(): HasMany
+  {
+    return $this->hasMany(EventFaq::class);
+  }
 }

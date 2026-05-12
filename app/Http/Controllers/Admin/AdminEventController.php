@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EventFaq;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Admin\StoreEventRequest;
 use App\Http\Requests\Admin\UpdateEventRequest;
 use App\Models\Event;
+use Illuminate\Http\Request;
 
 class AdminEventController extends Controller
 {
@@ -70,4 +72,43 @@ class AdminEventController extends Controller
 
     return redirect()->back()->with('success', 'Item deleted successfully');
   }
+
+  /*========== FAQs ==========*/
+
+  public function faqs(Event $event): View
+  {
+    $faqs = $event->eventFaqs()->orderBy('id', 'asc')->get();
+    return view('admin.event.faq', compact('event', 'faqs'));
+  }
+
+  public function faq_store(Request $request, Event $event): RedirectResponse
+  {
+    $validated = $request->validate([
+      'question' => 'required|string|max:255',
+      'answer' => 'required|string'
+    ]);
+
+    $event->eventFaqs()->create($validated);
+
+    return redirect()->back()->with('success', 'Item added successfully');
+  }
+
+  public function faq_update(Request $request, EventFaq $faq): RedirectResponse
+  {
+    $validated = $request->validate([
+      'question' => 'required|string|max:255',
+      'answer' => 'required|string'
+    ]);
+
+    $faq->update($validated);
+
+    return redirect()->back()->with('success', 'Item updated successfully');
+  }
+
+  public function faq_destroy(EventFaq $faq): RedirectResponse
+  {
+    $faq->delete();
+    return redirect()->back()->with('success', 'Item deleted successfully');
+  }
+
 }
