@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
 use App\Models\AboutItem;
 use App\Models\Admin;
+use App\Models\Event;
 use App\Models\Faq;
 use App\Models\Photo;
 use App\Models\Service;
@@ -28,12 +29,14 @@ class FrontController extends Controller
     $testimonials = Testimonial::latest()->take(3)->get();
     $aboutItem = AboutItem::first();
     $services = Service::where('show_on_home', 1)->get();
+    $events = Event::where('show_on_home', 1)->get();
 
     return view('front.home', compact(
       'sliders',
       'testimonials',
       'aboutItem',
-      'services'
+      'services',
+      'events'
     ));
   }
 
@@ -245,6 +248,19 @@ class FrontController extends Controller
     Mail::to($admin_email)->send(new Websitemail($subject,$message));
 
     return redirect()->back()->with('success', 'Your message has been sent successfully. We will get back to you soon.');
+  }
+
+  public function events(): View
+  {
+    $events = Event::latest()->get();
+    return view('front.events', compact('events'));
+  }
+
+  public function event($slug): View
+  {
+     $event = Event::where('slug', $slug)->firstOrFail();
+
+     return view('front.event', compact('event'));
   }
 
 }

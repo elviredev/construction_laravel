@@ -32,6 +32,10 @@
       <i class="fa-solid fa-tools"></i>
       <span class="sidebar-label">Services</span>
     </a>
+    <a href="{{ route('admin_event_index') }}" class="nav-link {{ request()->routeIs('admin_event_index') ? 'active' : '' }}">
+      <i class="fa-solid fa-calendar-days"></i>
+      <span class="sidebar-label">Events</span>
+    </a>
 {{--    <div class="nav-dropdown">--}}
 {{--      <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle">--}}
 {{--        <i class="fa-solid fa-table"></i>--}}

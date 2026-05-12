@@ -466,7 +466,7 @@
           <h2 class="main-title">Upcoming Events.</h2>
         </div>
         <div class="col-md-6 text-md-end">
-          <a href="event-details.html" class="primary-btns hover-icon-reverse">
+          <a href="{{ route('events') }}" class="primary-btns hover-icon-reverse">
             <span class="btn-text-content">
               <span class="btn-icon-wrapper">
                   <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -480,116 +480,48 @@
       <div class="row justify-content-center align-items-center">
         <div class="col-12">
           <div class="owl-carousel event-carousel owl-theme">
-            <!-- slider 1 -->
-            <div class="item">
-              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
-                <div class="thumbnail position-relative overflow-hidden">
-                  <a href="event-details.html">
-                    <img src="{{ asset('uploads/front/event-1.png') }}" class="img-fluid w-100"
-                    alt="event">
-                  </a>
-                </div>
-                <div class="content p-4">
-                  <div class="d-flex gap-3 mb-3 text-muted small">
-                    <span>
-                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
-                      Metro Convention
-                    </span>
-                    <span>
-                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
-                      11 Dec, 2026
-                    </span>
-                  </div>
-                  <a href="event-details.html" class="text-decoration-none text-dark">
-                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
-                  </a>
-                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
-                    <span class="btn-text-content">
-                      <span class="btn-icon-wrapper">
-                        <span class="btn-icon"><i
-                          class="fa-solid fa-arrow-right"></i>
-                        </span>
-                        <span class="btn-text">View Details</span>
-                      </span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            <!-- slider 2 -->
-            <div class="item">
-              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
-                <div class="thumbnail position-relative overflow-hidden">
-                  <a href="event-details.html">
-                    <img src="{{ asset('uploads/front/event-2.png') }}" class="img-fluid w-100"
-                    alt="event">
-                  </a>
-                </div>
-                <div class="content p-4">
-                  <div class="d-flex gap-3 mb-3 text-muted small">
-                    <span>
-                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
-                      Metro Convention
-                    </span>
-                    <span>
-                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
-                      11 Dec, 2026
-                    </span>
+            @foreach($events as $event)
+              <div class="item">
+                <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
+                  <div class="thumbnail position-relative overflow-hidden">
+                    <a href="{{ route('event', $event->slug) }}">
+                      <img
+                      src="{{ asset('uploads/admin/'. $event->image) }}"
+                      class="img-fluid w-100 object-fit-cover"
+                      style="height: 266px;"
+                      alt="event"
+                      >
+                    </a>
                   </div>
-                  <a href="event-details.html" class="text-decoration-none text-dark">
-                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
-                  </a>
-                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
-                    <span class="btn-text-content">
-                      <span class="btn-icon-wrapper">
-                        <span class="btn-icon"><i
-                          class="fa-solid fa-arrow-right"></i>
-                        </span>
-                        <span class="btn-text">View Details</span>
+                  <div class="content p-4">
+                    <div class="d-flex gap-3 mb-3 text-muted small">
+                      <span>
+                        <i class="fa-solid fa-location-dot text-primary me-1"></i>
+                        {{ $event->event_location }}
                       </span>
-                    </span>
-                  </a>
+                      <span>
+                        <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+                        {{ $event->event_date }}
+                      </span>
+                    </div>
+                    <a href="{{ route('event', $event->slug) }}" class="text-decoration-none text-dark">
+                      <h4 class="title fw-bold mb-4">{{ $event->title }}</h4>
+                    </a>
+                    <a href="{{ route('event', $event->slug) }}" class="primary-btns hover-icon-reverse">
+                      <span class="btn-text-content">
+                        <span class="btn-icon-wrapper">
+                          <span class="btn-icon"><i
+                            class="fa-solid fa-arrow-right"></i>
+                          </span>
+                          <span class="btn-text">View Details</span>
+                        </span>
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <!-- slider 3 -->
-            <div class="item">
-              <div class="single-event-card shadow-sm border rounded-4 overflow-hidden bg-white">
-                <div class="thumbnail position-relative overflow-hidden">
-                  <a href="event-details.html">
-                    <img src="{{ asset('uploads/front/event-3.png') }}" class="img-fluid w-100"
-                    alt="event">
-                  </a>
-                </div>
-                <div class="content p-4">
-                  <div class="d-flex gap-3 mb-3 text-muted small">
-                    <span>
-                      <i class="fa-solid fa-location-dot text-primary me-1"></i>
-                      Metro Convention
-                    </span>
-                    <span>
-                      <i class="fa-solid fa-calendar-day text-primary me-1"></i>
-                      11 Dec, 2026
-                    </span>
-                  </div>
-                  <a href="event-details.html" class="text-decoration-none text-dark">
-                    <h4 class="title fw-bold mb-4">National Construction Expo</h4>
-                  </a>
-                  <a href="event-details.html" class="primary-btns hover-icon-reverse">
-                    <span class="btn-text-content">
-                      <span class="btn-icon-wrapper">
-                        <span class="btn-icon">
-                          <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                        <span class="btn-text">View Details</span>
-                      </span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            @endforeach
 
           </div>
         </div>

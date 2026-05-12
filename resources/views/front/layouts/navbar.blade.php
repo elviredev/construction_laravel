@@ -25,7 +25,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">Pages</a>
           <ul class="dropdown-menu border-0">
-            <li><a class="dropdown-item" href="events.html">Our Event</a></li>
+            <li><a class="dropdown-item" href="{{ route('events') }}">Our Events</a></li>
             <li><a class="dropdown-item" href="team-member.html">Team Member</a></li>
             <li><a class="dropdown-item" href="projects.html">Projects</a></li>
             <li><a class="dropdown-item" href="shop.html">Shop</a></li>

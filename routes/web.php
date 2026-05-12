@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAboutItemController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminServiceController;
@@ -19,6 +20,8 @@ Route::get('/faq', [FrontController::class, 'faq'])->name('faq');
 Route::get('/services', [FrontController::class, 'services'])->name('services');
 Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
 Route::post('/service-contact',[FrontController::class,'service_contact'])->name('service_contact');
+Route::get('/events', [FrontController::class, 'events'])->name('events');
+Route::get('/event/{slug}', [FrontController::class, 'event'])->name('event');
 
 
 Route::get('/login', [FrontController::class, 'login'])->name('login');
@@ -91,6 +94,16 @@ Route::middleware('admin')->prefix('admin')->group(function () {
   Route::post('/service/{service}/faq/store', [AdminServiceController::class, 'faq_store'])->name('admin_service_faq_store');
   Route::put('/service/faq/update/{faq}', [AdminServiceController::class, 'faq_update'])->name('admin_service_faq_update');
   Route::delete('/service/faq/delete/{faq}', [AdminServiceController::class, 'faq_destroy'])->name('admin_service_faq_delete');
+
+  Route::get('/event/index', [AdminEventController::class, 'index'])->name('admin_event_index');
+  Route::post('/event/store', [AdminEventController::class, 'store'])->name('admin_event_store');
+  Route::put('/event/update/{event}', [AdminEventController::class, 'update'])->name('admin_event_update');
+  Route::delete('/event/delete/{id}', [AdminEventController::class, 'destroy'])->name('admin_event_delete');
+
+  Route::get('event/{event}/faqs', [AdminEventController::class, 'faqs'])->name('admin_event_faqs');
+  Route::post('/event/{event}/faq/store', [AdminEventController::class, 'faq_store'])->name('admin_event_faq_store');
+  Route::put('/event/faq/update/{faq}', [AdminEventController::class, 'faq_update'])->name('admin_event_faq_update');
+  Route::delete('/event/faq/delete/{faq}', [AdminEventController::class, 'faq_destroy'])->name('admin_event_faq_delete');
 });
 
 

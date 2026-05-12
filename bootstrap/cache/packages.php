@@ -52,4 +52,15 @@
       0 => 'Pest\\Laravel\\PestServiceProvider',
     ),
   ),
+  'spatie/laravel-sluggable' => 
+  array (
+    'aliases' => 
+    array (
+      'SelfHealing' => 'Spatie\\Sluggable\\Facades\\SelfHealing',
+    ),
+    'providers' => 
+    array (
+      0 => 'Spatie\\Sluggable\\SluggableServiceProvider',
+    ),
+  ),
 );
